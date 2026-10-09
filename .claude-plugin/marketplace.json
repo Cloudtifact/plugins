@@ -1,0 +1,17 @@
+{
+  "name": "cloudtifact",
+  "owner": { "name": "Cloudtifact", "email": "support@cloudtifact.com" },
+  "metadata": {
+    "description": "Cloudtifact's plugins: publish pages your agent makes and work through the comments people leave on them."
+  },
+  "plugins": [
+    {
+      "name": "cloudtifact",
+      "source": "./plugins/cloudtifact",
+      "description": "Publish HTML pages and docs to a stable link, then read, fix, reply to and resolve the comments people leave on them.",
+      "version": "0.1.0",
+      "category": "productivity",
+      "homepage": "https://cloudtifact.com"
+    }
+  ]
+}
