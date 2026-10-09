@@ -26,6 +26,16 @@ npx skills add Cloudtifact/plugins
 
 Or run `cloudtifact skill install` after installing the CLI, which writes the same skill into every agent's skills folder on your machine.
 
+## What data it sends
+
+The plugin itself stores nothing. Its commands run the `cloudtifact` CLI, which talks only to Cloudtifact's API (`api.cloudtifact.com`), signed in as you:
+
+- **Publishing** uploads the page or docs you choose, plus the files they reference, to your Cloudtifact space. They're kept until you delete them.
+- **Comments** reads the comments on your spaces (with their authors' names) and posts the replies and resolves the agent makes.
+- **Space databases** run only the queries the agent sends, with your access to that space.
+
+Your sign-in token stays in `~/.config/cloudtifact/config.json` on your machine and is only sent to Cloudtifact's API. See the [privacy policy](https://cloudtifact.com/privacy).
+
 ## Links
 
 - Docs: https://cloudtifact.com/docs
