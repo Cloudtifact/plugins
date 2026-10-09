@@ -1,0 +1,18 @@
+{
+  "name": "cloudtifact",
+  "owner": {
+    "name": "Cloudtifact",
+    "email": "support@cloudtifact.com"
+  },
+  "metadata": {
+    "description": "Cloudtifact's plugins for coding agents."
+  },
+  "plugins": [
+    {
+      "name": "cloudtifact",
+      "source": "plugins/cloudtifact",
+      "description": "Publish HTML pages and docs to a stable link, then read, fix, reply to and resolve the comments people leave on them.",
+      "category": "productivity"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "name": "cloudtifact",
+  "interface": {
+    "displayName": "Cloudtifact"
+  },
+  "plugins": [
+    {
+      "name": "cloudtifact",
+      "source": {
+        "source": "local",
+        "path": "./plugins/cloudtifact"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "cloudtifact",
+  "description": "Publish HTML pages and docs to a stable link, then read, fix, reply to and resolve the comments people leave on them.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Cloudtifact",
+    "email": "support@cloudtifact.com"
+  },
+  "homepage": "https://cloudtifact.com",
+  "repository": "https://github.com/Cloudtifact/plugins",
+  "license": "MIT",
+  "keywords": [
+    "publish",
+    "share",
+    "html",
+    "artifacts",
+    "comments",
+    "feedback",
+    "review"
+  ],
+  "logo": ".claude-plugin/icon.png"
+}

@@ -18,7 +18,14 @@ It uses the [`cloudtifact` CLI](https://www.npmjs.com/package/cloudtifact) (`npm
 /plugin install cloudtifact@cloudtifact
 ```
 
-**Other agents** (Codex, Cursor, OpenCode and others that read skills):
+**Codex**
+
+```
+codex plugin marketplace add Cloudtifact/plugins
+codex plugin add cloudtifact@cloudtifact
+```
+
+**Other agents** (Cursor, GitHub Copilot, OpenCode and others that read skills):
 
 ```
 npx skills add Cloudtifact/plugins
