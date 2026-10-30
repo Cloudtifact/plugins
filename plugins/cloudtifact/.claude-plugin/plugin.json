@@ -1,9 +1,9 @@
 {
   "name": "cloudtifact",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Publish HTML pages and docs to a stable link, then read, fix, reply to and resolve the comments people leave on them.",
   "author": {
-    "name": "Cloudtifact",
+    "name": "Cloudy",
     "email": "support@cloudtifact.com",
     "url": "https://cloudtifact.com"
   },

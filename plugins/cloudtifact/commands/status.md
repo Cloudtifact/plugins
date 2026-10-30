@@ -1,5 +1,5 @@
 ---
-description: Show what's published on Cloudtifact, unpublished changes and open comments
+description: Show what's published on Cloudy, unpublished changes and open comments
 ---
 
 Following the cloudtifact skill:

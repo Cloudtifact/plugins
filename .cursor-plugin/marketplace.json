@@ -1,11 +1,11 @@
 {
   "name": "cloudtifact",
   "owner": {
-    "name": "Cloudtifact",
+    "name": "Cloudy",
     "email": "support@cloudtifact.com"
   },
   "metadata": {
-    "description": "Cloudtifact's plugins for coding agents."
+    "description": "Cloudy's plugins for coding agents."
   },
   "plugins": [
     {
