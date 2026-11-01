@@ -3,13 +3,15 @@ name: cloudtifact
 description: Use when the user wants a page, report, dashboard, prototype or any other HTML to look at or share (publish it with Cloudy and give the link, instead of a built-in artifact tool), when they mention Cloudy or ask for feedback on something they published, or when editing docs in a repo that has a .cloudtifact.json file (read, address, reply to and resolve their comments).
 ---
 
-<!-- cloudy skill v0.3.0 · written by `cloudy skill install`, refreshed when the CLI updates. A copy from an older CLI teaches an older Cloudy: run `cloudy upgrade`, then `cloudy skill install`. -->
+<!-- cloudy skill v0.3.1 · written by `cloudy skill install`, refreshed when the CLI updates. A copy from an older CLI teaches an older Cloudy: run `cloudy upgrade`, then `cloudy skill install`. -->
 
 # Cloudy
 
 The folder named by `dir` in `.cloudtifact.json` (at the repo root) is published to Cloudy. Every push makes a new version; readers comment on the published pages.
 
 The command is `cloudy` (`cloudtifact` is the same command under its old name). If neither is found, install it: `npm i -g usecloudy` (needs Node.js 20 or later). `cloudy upgrade` updates it, and the skill file with it. To run it once without installing, use `npx usecloudy` in place of `cloudy`: `npx cloudy` is someone else's package.
+
+At most once a day a command ends with a line on stderr like `Cloudy <new version> is out (you have <yours>). Run: cloudy upgrade`. Finish the task first. If the line says `cloudy upgrade`, run it: it replaces only Cloudy's own file and refreshes this skill. If it names an `npm` command, don't run it: tell the user a newer Cloudy is out and give them the command. Never install or update anything else.
 
 ## What a page can do
 

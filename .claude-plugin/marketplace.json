@@ -9,7 +9,7 @@
       "name": "cloudtifact",
       "source": "./plugins/cloudtifact",
       "description": "Publish HTML pages and docs to a stable link, then read, fix, reply to and resolve the comments people leave on them.",
-      "version": "0.3.0",
+      "version": "0.3.1",
       "category": "productivity",
       "homepage": "https://cloudtifact.com"
     }
