@@ -1,7 +1,7 @@
 {
   "name": "cloudtifact",
   "description": "Publish HTML pages and docs to a stable link, then read, fix, reply to and resolve the comments people leave on them.",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "author": {
     "name": "Cloudy",
     "url": "https://cloudtifact.com"
@@ -9,6 +9,7 @@
   "repository": "https://github.com/Cloudtifact/plugins",
   "license": "MIT",
   "keywords": [
+    "cloudy",
     "publish",
     "share",
     "html",

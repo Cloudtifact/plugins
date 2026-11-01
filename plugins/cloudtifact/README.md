@@ -7,7 +7,7 @@ This repo is a plugin marketplace. The `cloudtifact` plugin adds:
 - **A skill** that teaches the agent to publish HTML pages with Cloudy instead of a throwaway preview, and to read, address, reply to and resolve comments.
 - **Commands:** `/cloudtifact:publish [file.html]`, `/cloudtifact:comments`, `/cloudtifact:status`.
 
-It uses the [`cloudtifact` CLI](https://www.npmjs.com/package/cloudtifact) (`npm i -g cloudtifact`, Node.js 20 or later). The first time, the agent runs `cloudtifact login` and gives you a link to sign in in your browser.
+It uses the [Cloudy CLI](https://www.npmjs.com/package/usecloudy): `npm i -g usecloudy` (Node.js 20 or later) installs the `cloudy` command. `cloudtifact` is the same command under its old name, so older setups keep working. To run it once without installing, use `npx usecloudy` (`npx cloudy` is someone else's package). The first time, the agent runs `cloudy login` and gives you a link to sign in in your browser.
 
 ## Install
 
@@ -31,11 +31,11 @@ codex plugin add cloudtifact@cloudtifact
 npx skills add Cloudtifact/plugins
 ```
 
-Or run `cloudtifact skill install` after installing the CLI, which writes the same skill into every agent's skills folder on your machine.
+Or run `cloudy skill install` after installing the CLI, which writes the same skill into every agent's skills folder on your machine. `cloudy upgrade` updates the CLI and those copies together.
 
 ## What data it sends
 
-The plugin itself stores nothing. Its commands run the `cloudtifact` CLI, which talks only to Cloudy's API (`api.cloudtifact.com`), signed in as you:
+The plugin itself stores nothing. Its commands run the `cloudy` CLI, which talks only to Cloudy's API (`api.cloudtifact.com`), signed in as you:
 
 - **Publishing** uploads the page or docs you choose, plus the files they reference, to your Cloudy space. They're kept until you delete them.
 - **Comments** reads the comments on your spaces (with their authors' names) and posts the replies and resolves the agent makes.
