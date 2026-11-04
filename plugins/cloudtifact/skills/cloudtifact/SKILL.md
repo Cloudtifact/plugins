@@ -3,7 +3,7 @@ name: cloudtifact
 description: Use when the user wants a page, report, dashboard, prototype or any other HTML to look at or share (publish it with Cloudy and give the link, instead of a built-in artifact tool), when they mention Cloudy or ask for feedback on something they published, or when editing docs in a repo that has a .cloudtifact.json file (read, address, reply to and resolve their comments).
 ---
 
-<!-- cloudy skill v0.3.1 · written by `cloudy skill install`, refreshed when the CLI updates. A copy from an older CLI teaches an older Cloudy: run `cloudy upgrade`, then `cloudy skill install`. -->
+<!-- cloudy skill v0.3.2 · written by `cloudy skill install`, refreshed when the CLI updates. A copy from an older CLI teaches an older Cloudy: run `cloudy upgrade`, then `cloudy skill install`. -->
 
 # Cloudy
 
@@ -75,13 +75,13 @@ When you make an HTML page for the user, run `cloudy publish <file.html>` and gi
 
 - To update it, edit the same file and publish it again: new version, same link.
 - Keep supporting files next to the HTML (or in subfolders) and reference them with relative paths (`style.css`, `img/logo.png`). Absolute paths and files outside the page's folder aren't included.
-- Pages are private by default; add `--public` on the first publish for a link anyone can open. `cloudy artifacts` lists what you've published.
+- Spaces are private. Never add `--public` unless the user asks for a public link in this conversation, or it's a PR screenshot page. `--public` only works on the first publish. To switch a space later, a space admin runs `cloudy settings --space <id> --visibility private` (members of the workspace only) or `--visibility public` (anyone with the link, same rule as `--public`). Going public turns guest comments on; going private turns guest comments and guest writes off, and the public link stops working. `cloudy artifacts` lists what you've published.
 - New work joins the space already about the same topic, as a page, instead of making another space: `publish` finds it (same workspace, same who-can-see) and prints `Looks like "<space>"`. Tell the user where it went. To check first, run `cloudy find "<title>" --toon`; `--add-to <id>` adds the page to a space you pick, `--new` makes a separate space when the user wants one.
 - A page that stores something needs the space to allow it: read "What a space can't do" first.
 
 ## Copying a page someone sent you
 
-When the user is sent a Cloudy link and wants their own copy, run `cloudy copy <url>`. It publishes the files into a new space in their workspace and prints the new link. Add `--public` if they want anyone to open it. `-o <dir>` also writes the files locally; `--no-publish -o <dir>` writes them without making a space.
+When the user is sent a Cloudy link and wants their own copy, run `cloudy copy <url>`. It publishes the files into a new space in their workspace and prints the new link. It's private; add `--public` only if the user asks for a link anyone can open. `-o <dir>` also writes the files locally; `--no-publish -o <dir>` writes them without making a space.
 
 ## Space files
 
@@ -124,7 +124,7 @@ Put the SQL a page needs in `db/NNN_name.sql` files next to it (the page's folde
 
 ## Guest writes
 
-For visitors who aren't signed in to add data (a sign-up sheet, a vote, feedback, a high score), the page runs named writes you publish, never its own SQL. The space must be public, and an admin turns on "Pages can save data for people who are not signed in": in the space's Settings, or `cloudy settings --guest-writes on` (admins only). If the pages shouldn't show what guests saved (answers, sign-ups), also turn off "Pages can show saved data" (`--pages-show-data off`) first. `cloudy settings` shows both. `cloudy settings --link homeideas` sets the public link (`--link off` clears it). Ask the user before you turn guest writes on.
+For visitors who aren't signed in to add data (a sign-up sheet, a vote, feedback, a high score), the page runs named writes you publish, never its own SQL. The space must be public (ask the user first: spaces are private), and an admin turns on "Pages can save data for people who are not signed in": in the space's Settings, or `cloudy settings --guest-writes on` (admins only). If the pages shouldn't show what guests saved (answers, sign-ups), also turn off "Pages can show saved data" (`--pages-show-data off`) first. `cloudy settings` shows both. `cloudy settings --link homeideas` sets the public link (`--link off` clears it). Ask the user before you turn guest writes on.
 
 - Put the statements in `db/guest-writes.sql` next to the page: `-- name: vote` on its own line, then exactly one INSERT, UPDATE or DELETE. `?` placeholders take the page's params; `$guest` is the name the visitor gave and `$guest_id` a stable id for their browser, both filled in by the server. Publish and push upload the whole set (replacing the old one) after the migrations; `cloudy db guest-writes` shows what's live.
 - In the page: `await window.cloudtifact.guest.set(name)` once (it remembers the name), then `await window.cloudtifact.db.run("vote", [choice])`. Without a name it rejects with code `no_guest`.
