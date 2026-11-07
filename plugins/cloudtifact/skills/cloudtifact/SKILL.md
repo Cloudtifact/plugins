@@ -3,7 +3,7 @@ name: cloudtifact
 description: Use when the user wants a page, report, dashboard, prototype or any other HTML to look at or share (publish it with Cloudy and give the link, instead of a built-in artifact tool), when they mention Cloudy or ask for feedback on something they published, or when editing docs in a repo that has a .cloudtifact.json file (read, address, reply to and resolve their comments).
 ---
 
-<!-- cloudy skill v0.3.1 · written by `cloudy skill install`, refreshed when the CLI updates. A copy from an older CLI teaches an older Cloudy: run `cloudy upgrade`, then `cloudy skill install`. -->
+<!-- cloudy skill v0.3.3 · written by `cloudy skill install`, refreshed when the CLI updates. A copy from an older CLI teaches an older Cloudy: run `cloudy upgrade`, then `cloudy skill install`. -->
 
 # Cloudy
 
@@ -24,15 +24,15 @@ Pick by need:
 - feedback on the page -> comments (built in)
 - an AI judgement inside the page -> decisions (preview, per space)
 
-- **Database** (`database`): The page keeps data between visits: lists, scores, answers, a tracker. Members add or edit it; everyone can read it. Docs: https://cloudtifact.com/capabilities/database.md
-- **Guest writes** (`guest_writes`): Visitors who aren't signed in add data: a sign-up sheet, a vote, feedback, a high score. Save it in the database. Off until an admin turns it on. Docs: https://cloudtifact.com/capabilities/guest-writes.md
-- **Space files** (`files`): The work needs files people give you: exports, PDFs, spreadsheets, images. Docs: https://cloudtifact.com/capabilities/files.md
-- **Comments** (`comments`): Feedback on the page itself. It's built in: don't build a comment form. Docs: https://cloudtifact.com/capabilities/comments.md
-- **Realtime rooms** (`multiplayer`): Several people have the page open at once and what one does should show up for the others within a second: a live poll, planning poker, a quiz, cursors, a game. Save results that should last in the database. Preview: only in spaces where it's turned on. Docs: https://cloudtifact.com/capabilities/realtime-rooms.md
-- **Decisions** (`decide`): The page needs a judgement it can't compute: pick the best match, score an answer, check a photo. Preview: only in spaces where it's turned on. Docs: https://cloudtifact.com/capabilities/decisions.md
+- **Database** (`database`): The page keeps data between visits: lists, scores, answers, a tracker. Members add or edit it; everyone can read it. Docs: https://usecloudy.ai/capabilities/database.md
+- **Guest writes** (`guest_writes`): Visitors who aren't signed in add data: a sign-up sheet, a vote, feedback, a high score. Save it in the database. Off until an admin turns it on. Docs: https://usecloudy.ai/capabilities/guest-writes.md
+- **Space files** (`files`): The work needs files people give you: exports, PDFs, spreadsheets, images. Docs: https://usecloudy.ai/capabilities/files.md
+- **Comments** (`comments`): Feedback on the page itself. It's built in: don't build a comment form. Docs: https://usecloudy.ai/capabilities/comments.md
+- **Realtime rooms** (`multiplayer`): Several people have the page open at once and what one does should show up for the others within a second: a live poll, planning poker, a quiz, cursors, a game. Save results that should last in the database. Preview: only in spaces where it's turned on. Docs: https://usecloudy.ai/capabilities/realtime-rooms.md
+- **Decisions** (`decide`): The page needs a judgement it can't compute: pick the best match, score an answer, check a photo. Preview: only in spaces where it's turned on. Docs: https://usecloudy.ai/capabilities/decisions.md
 
 What a page can't do: No video or audio files, no sending email, no server code of your own. Pages can call outside services with your own API keys.
-All of them in one file: https://cloudtifact.com/capabilities.md
+All of them in one file: https://usecloudy.ai/capabilities.md
 
 ## What a space can't do
 
@@ -75,13 +75,22 @@ When you make an HTML page for the user, run `cloudy publish <file.html>` and gi
 
 - To update it, edit the same file and publish it again: new version, same link.
 - Keep supporting files next to the HTML (or in subfolders) and reference them with relative paths (`style.css`, `img/logo.png`). Absolute paths and files outside the page's folder aren't included.
-- Pages are private by default; add `--public` on the first publish for a link anyone can open. `cloudy artifacts` lists what you've published.
-- New work joins the space already about the same topic, as a page, instead of making another space: `publish` finds it (same workspace, same who-can-see) and prints `Looks like "<space>"`. Tell the user where it went. To check first, run `cloudy find "<title>" --toon`; `--add-to <id>` adds the page to a space you pick, `--new` makes a separate space when the user wants one.
+- Spaces are private. Never add `--public` unless the user asks for a public link in this conversation, or it's a PR screenshot page. `--public` only works on the first publish. To switch a space later, a space admin runs `cloudy settings --space <id> --visibility private` (members of the workspace only) or `--visibility public` (anyone with the link, same rule as `--public`). Going public turns guest comments on; going private turns guest comments and guest writes off, and the public link stops working. `cloudy artifacts` lists what you've published.
+- New work joins the space already about the same topic, as a page, instead of making another space: `publish` finds it (same workspace, same who-can-see) and prints `Looks like "<space>"`. Tell the user where it went. To check first, run `cloudy find "<title>" --toon`; `--add-to <id>` adds the page to a space you pick, `--new` makes a separate space when the user wants one. Then link it from the space's home page (below).
 - A page that stores something needs the space to allow it: read "What a space can't do" first.
+
+### Adding a page to a space
+
+A page added to a space (`--add-to`, or `Looks like "<space>"`) goes in its own folder, named after the file: `mac-mini-server.html` becomes `mac-mini-server/`, while `index.html` becomes `index-2/`. So name the file after its topic before you publish. Nobody finds the page unless the space's home page links to it, so every time:
+
+1. `cloudy copy <space id> --no-publish -o <dir>` writes the space's files (the home page is `index.html`, each added page is `<folder>/index.html`). It makes no new space.
+2. Edit `<dir>/index.html`: add a link to the new page (`href="mac-mini-server/"`) in its navigation or list of contents, in the same style as the links already there. If the home page doesn't list its pages, add a short "Pages" list in its look; if the space has no home page at all, make a simple `index.html` that links to every folder.
+3. `cloudy publish <dir>/index.html --space <id> --keep-pages`. Without `--keep-pages`, publishing to `--space` replaces every file in the space and deletes the added pages.
+4. Give the user both links: the new page's and the home page's.
 
 ## Copying a page someone sent you
 
-When the user is sent a Cloudy link and wants their own copy, run `cloudy copy <url>`. It publishes the files into a new space in their workspace and prints the new link. Add `--public` if they want anyone to open it. `-o <dir>` also writes the files locally; `--no-publish -o <dir>` writes them without making a space.
+When the user is sent a Cloudy link and wants their own copy, run `cloudy copy <url>`. It publishes the files into a new space in their workspace and prints the new link. It's private; add `--public` only if the user asks for a link anyone can open. `-o <dir>` also writes the files locally; `--no-publish -o <dir>` writes them without making a space.
 
 ## Space files
 
@@ -124,7 +133,7 @@ Put the SQL a page needs in `db/NNN_name.sql` files next to it (the page's folde
 
 ## Guest writes
 
-For visitors who aren't signed in to add data (a sign-up sheet, a vote, feedback, a high score), the page runs named writes you publish, never its own SQL. The space must be public, and an admin turns on "Pages can save data for people who are not signed in": in the space's Settings, or `cloudy settings --guest-writes on` (admins only). If the pages shouldn't show what guests saved (answers, sign-ups), also turn off "Pages can show saved data" (`--pages-show-data off`) first. `cloudy settings` shows both. `cloudy settings --link homeideas` sets the public link (`--link off` clears it). Ask the user before you turn guest writes on.
+For visitors who aren't signed in to add data (a sign-up sheet, a vote, feedback, a high score), the page runs named writes you publish, never its own SQL. The space must be public (ask the user first: spaces are private), and an admin turns on "Pages can save data for people who are not signed in": in the space's Settings, or `cloudy settings --guest-writes on` (admins only). If the pages shouldn't show what guests saved (answers, sign-ups), also turn off "Pages can show saved data" (`--pages-show-data off`) first. `cloudy settings` shows both. `cloudy settings --link homeideas` sets the public link (`--link off` clears it). Ask the user before you turn guest writes on.
 
 - Put the statements in `db/guest-writes.sql` next to the page: `-- name: vote` on its own line, then exactly one INSERT, UPDATE or DELETE. `?` placeholders take the page's params; `$guest` is the name the visitor gave and `$guest_id` a stable id for their browser, both filled in by the server. Publish and push upload the whole set (replacing the old one) after the migrations; `cloudy db guest-writes` shows what's live.
 - In the page: `await window.cloudtifact.guest.set(name)` once (it remembers the name), then `await window.cloudtifact.db.run("vote", [choice])`. Without a name it rejects with code `no_guest`.
