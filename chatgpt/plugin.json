@@ -1,0 +1,96 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "cloudy",
+  "version": "1.0.0",
+  "description": "Publish pages to a stable link, then read, reply to and resolve the comments people leave on them.",
+  "author": {
+    "name": "Cloudy",
+    "email": "support@usecloudy.ai",
+    "url": "https://usecloudy.ai"
+  },
+  "homepage": "https://usecloudy.ai/docs/integrations/chatgpt",
+  "repository": "https://github.com/Cloudtifact/plugins",
+  "license": "MIT",
+  "keywords": ["pages", "publishing", "comments", "sharing", "docs"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Cloudy",
+        "shortDescription": "Publish pages, answer comments",
+        "longDescription": "Cloudy gives pages and docs a stable link that people can open and comment on. Ask ChatGPT or Codex to publish a page it made, update it later at the same link, then read what people said, reply, and resolve the comments it addressed. It can do what you can do in your Cloudy workspaces, and nothing more. New pages are private to your workspace unless you ask for a public link. Nothing is deleted: only you can delete, in Cloudy. You need a Cloudy account.",
+        "developerName": "Cloudy",
+        "category": "Productivity",
+        "capabilities": ["Publish pages", "Update pages at the same link", "Read and answer comments"],
+        "websiteURL": "https://usecloudy.ai",
+        "supportURL": "https://usecloudy.ai/support",
+        "privacyPolicyURL": "https://usecloudy.ai/privacy",
+        "termsOfServiceURL": "https://usecloudy.ai/terms",
+        "defaultPrompt": [
+          "Publish this as a page and give me the link.",
+          "What did people say about the pricing page?",
+          "Reply that it's fixed and resolve the comment."
+        ],
+        "brandColor": "#37668B",
+        "brandColorDark": "#71A4C7",
+        "composerIcon": "./assets/composer-icon.png",
+        "logo": "./assets/logo.png"
+      },
+      "onboardingSkill": "./skills/get-started/SKILL.md",
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Publishes a new private page from the chat.",
+              "prompt": "Make a one-page Q4 launch summary and publish it to Cloudy as a new page.",
+              "tools_triggered": "publish_page",
+              "expected_behavior": "After confirmation, a new private space is created and the assistant returns its link. The page opens for the signed-in test account."
+            },
+            {
+              "description": "Finds existing work without changing anything.",
+              "prompt": "Which of my Cloudy spaces are about the sample launch plan?",
+              "tools_triggered": "find_spaces",
+              "expected_behavior": "Lists the Sample launch plan space with its link. Nothing is changed."
+            },
+            {
+              "description": "Reads the open comments on a page.",
+              "prompt": "What did people say on the Sample launch plan page?",
+              "tools_triggered": "find_spaces, list_comments",
+              "expected_behavior": "Summarises the open comment threads on the page, naming who wrote each one."
+            },
+            {
+              "description": "Updates a published page and keeps its link.",
+              "prompt": "Change the launch date on the Sample launch plan page to 12 December and publish it.",
+              "tools_triggered": "find_spaces, read_file, publish_page",
+              "expected_behavior": "After confirmation, publishes a new version at the same link with the new date. The earlier version stays in the version list."
+            },
+            {
+              "description": "Answers and resolves a comment.",
+              "prompt": "Reply to the open comment about the launch date saying it's fixed, then resolve it.",
+              "tools_triggered": "list_comments, reply_to_comment, resolve_comment",
+              "expected_behavior": "After confirmation, the reply shows on the thread, signed as the test account via the assistant, and the thread is marked resolved."
+            }
+          ],
+          "negative": [
+            {
+              "description": "A question Cloudy has nothing to do with: no Cloudy tool is called.",
+              "prompt": "What's the capital of Australia?"
+            },
+            {
+              "description": "Deleting isn't offered: only a person can delete, in the Cloudy app.",
+              "prompt": "Permanently delete the Sample launch plan space."
+            },
+            {
+              "description": "A space the signed-in account can't see: Cloudy answers that it isn't found.",
+              "prompt": "Read the comments on Cloudy space abcdefghij."
+            }
+          ]
+        },
+        "commerce": false,
+        "commerce_description": "Cloudy doesn't sell or take payments in ChatGPT or Codex."
+      },
+      "publication": {
+        "release_notes": "First version: publish and update pages, and read, reply to and resolve the comments on them."
+      }
+    }
+  }
+}

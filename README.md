@@ -12,7 +12,8 @@ Each agent gets Cloudy one of two ways:
 | Agent | How |
 | --- | --- |
 | Claude Code | `/plugin install cloudy --marketplace Cloudtifact/plugins` |
-| Codex | `codex plugin marketplace add Cloudtifact/plugins`, then `codex plugin add cloudy@cloudy` |
+| ChatGPT / Codex (directory) | ZIP in [chatgpt/](chatgpt/). Until it's listed: add `https://mcp.usecloudy.ai/mcp` as a custom MCP server in ChatGPT, or `codex mcp add cloudy --url https://mcp.usecloudy.ai/mcp` |
+| Codex CLI plugin | `codex plugin marketplace add Cloudtifact/plugins`, then `codex plugin add cloudy@cloudy` |
 | GitHub Copilot CLI | `copilot plugin marketplace add Cloudtifact/plugins`, then `copilot plugin install cloudy@cloudy` |
 | Cursor | Clone this repo and link `plugins/cloudy` into `~/.cursor/plugins/local/` (see [cursor/](cursor/README.md)); teams can import the repo as a marketplace |
 | Grok | `grok plugin marketplace add Cloudtifact/plugins`, then `grok plugin install cloudy@cloudy` |
