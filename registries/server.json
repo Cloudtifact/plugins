@@ -1,0 +1,10 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "ai.usecloudy/cloudy",
+  "title": "Cloudy",
+  "description": "Publish pages to a stable link, then read, reply to and resolve the comments people leave on them.",
+  "websiteUrl": "https://usecloudy.ai/docs/mcp",
+  "version": "0.1.0",
+  "icons": [{ "src": "https://usecloudy.ai/icon.png", "mimeType": "image/png", "sizes": ["512x512"] }],
+  "remotes": [{ "type": "streamable-http", "url": "https://mcp.cloudtifact.com/mcp" }]
+}

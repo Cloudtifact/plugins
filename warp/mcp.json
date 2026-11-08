@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "cloudy": {
+      "url": "https://mcp.cloudtifact.com/mcp"
+    }
+  }
+}

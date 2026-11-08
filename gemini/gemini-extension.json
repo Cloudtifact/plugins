@@ -1,0 +1,12 @@
+{
+  "name": "cloudy",
+  "version": "0.3.3",
+  "description": "Publish HTML pages and docs to a stable link, then read, fix, reply to and resolve the comments people leave on them.",
+  "contextFileName": "GEMINI.md",
+  "mcpServers": {
+    "cloudy": {
+      "httpUrl": "https://mcp.cloudtifact.com/mcp",
+      "timeout": 60000
+    }
+  }
+}

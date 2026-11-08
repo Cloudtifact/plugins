@@ -1,0 +1,33 @@
+{
+  "name": "cloudy",
+  "owner": {
+    "name": "Cloudy",
+    "email": "support@usecloudy.ai"
+  },
+  "metadata": {
+    "description": "Cloudy's extension for Junie: publish pages your agent makes and work through the comments people leave on them.",
+    "version": "0.3.3",
+    "homepage": "https://usecloudy.ai"
+  },
+  "extensions": [
+    {
+      "name": "cloudy",
+      "source": "./cloudy",
+      "description": "Publish HTML pages and docs to a stable link, then read, fix, reply to and resolve the comments people leave on them.",
+      "version": "0.3.3",
+      "author": {
+        "name": "Cloudy"
+      },
+      "category": "productivity",
+      "homepage": "https://usecloudy.ai",
+      "keywords": [
+        "publish",
+        "html",
+        "comments",
+        "review",
+        "docs",
+        "mcp"
+      ]
+    }
+  ]
+}

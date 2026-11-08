@@ -1,0 +1,16 @@
+{
+  "name": "cloudy",
+  "description": "Cloudy publishes the HTML pages, reports and docs Grok makes to a stable link, private by default. People comment on the exact text they mean; Grok reads the comments, fixes the page, replies and resolves them. Every version is kept. Hosted MCP server plus a skill; sign in with your Cloudy account, no API key.",
+  "category": "productivity",
+  "source": {
+    "source": "url",
+    "url": "https://github.com/Cloudtifact/plugins.git",
+    "sha": "REPLACE_WITH_40_CHAR_COMMIT_SHA_ON_MAIN",
+    "path": "grok"
+  },
+  "homepage": "https://usecloudy.ai",
+  "keywords": ["cloudy", "usecloudy", "cloudy page", "cloudy comments", "publish with cloudy"],
+  "domains": ["usecloudy.ai", "app.usecloudy.ai", "cloudy.page"],
+  "version": "0.3.3",
+  "author": { "name": "Cloudy", "email": "support@usecloudy.ai", "url": "https://usecloudy.ai" }
+}

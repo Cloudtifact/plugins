@@ -1,0 +1,24 @@
+{
+  "name": "cloudy",
+  "description": "Publish HTML pages and docs to a stable link, then read, fix, reply to and resolve the comments people leave on them.",
+  "version": "0.3.3",
+  "author": {
+    "name": "Cloudy",
+    "url": "https://usecloudy.ai"
+  },
+  "repository": "https://github.com/Cloudtifact/plugins",
+  "license": "MIT",
+  "keywords": [
+    "cloudy",
+    "publish",
+    "share",
+    "html",
+    "artifacts",
+    "comments",
+    "feedback",
+    "review"
+  ],
+  "skills": [
+    "./skills/cloudtifact"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "name": "cloudy",
+  "owner": {
+    "name": "Cloudy",
+    "email": "support@usecloudy.ai"
+  },
+  "metadata": {
+    "description": "Cloudy's plugins: publish pages your agent makes and work through the comments people leave on them.",
+    "version": "0.3.3"
+  },
+  "plugins": [
+    {
+      "name": "cloudy",
+      "source": "./copilot/cloudy",
+      "description": "Publish HTML pages and docs to a stable link, then read, fix, reply to and resolve the comments people leave on them.",
+      "version": "0.3.3",
+      "author": {
+        "name": "Cloudy",
+        "email": "support@usecloudy.ai",
+        "url": "https://usecloudy.ai"
+      },
+      "homepage": "https://usecloudy.ai",
+      "repository": "https://github.com/Cloudtifact/plugins",
+      "license": "MIT",
+      "category": "productivity",
+      "keywords": ["cloudy", "publish", "share", "html", "comments", "feedback", "review", "mcp"]
+    }
+  ]
+}

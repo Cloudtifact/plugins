@@ -1,18 +1,17 @@
 {
-  "name": "cloudtifact",
+  "name": "cloudy",
   "owner": {
     "name": "Cloudy",
-    "email": "support@cloudtifact.com"
+    "email": "support@usecloudy.ai"
   },
   "metadata": {
     "description": "Cloudy's plugins for coding agents."
   },
   "plugins": [
     {
-      "name": "cloudtifact",
-      "source": "plugins/cloudtifact",
-      "description": "Publish HTML pages and docs to a stable link, then read, fix, reply to and resolve the comments people leave on them.",
-      "category": "productivity"
+      "name": "cloudy",
+      "source": "plugins/cloudy",
+      "description": "Publish HTML pages and docs to a stable link, then read, fix, reply to and resolve the comments people leave on them."
     }
   ]
 }

@@ -1,0 +1,5 @@
+node_modules/
+# Copied from ../plugins/cloudy/ by scripts/sync.mjs at pack time.
+skills/
+commands/
+*.tgz

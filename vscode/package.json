@@ -1,0 +1,54 @@
+{
+  "name": "cloudy",
+  "displayName": "Cloudy",
+  "description": "Publish HTML pages and docs to a stable link, then read, fix, reply to and resolve the comments people leave on them.",
+  "version": "0.3.3",
+  "publisher": "usecloudy",
+  "license": "MIT",
+  "icon": "icon.png",
+  "homepage": "https://usecloudy.ai",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Cloudtifact/plugins.git",
+    "directory": "vscode"
+  },
+  "bugs": {
+    "url": "https://github.com/Cloudtifact/plugins/issues",
+    "email": "support@usecloudy.ai"
+  },
+  "engines": {
+    "vscode": "^1.110.0"
+  },
+  "categories": [
+    "AI",
+    "Chat"
+  ],
+  "keywords": [
+    "cloudy",
+    "mcp",
+    "publish",
+    "share",
+    "html",
+    "comments",
+    "feedback",
+    "review",
+    "copilot"
+  ],
+  "main": "./extension.js",
+  "activationEvents": [
+    "onMcpCollection:cloudy"
+  ],
+  "contributes": {
+    "mcpServerDefinitionProviders": [
+      {
+        "id": "cloudy",
+        "label": "Cloudy"
+      }
+    ],
+    "chatSkills": [
+      {
+        "path": "./skills/cloudtifact/SKILL.md"
+      }
+    ]
+  }
+}

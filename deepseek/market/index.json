@@ -1,0 +1,25 @@
+{
+  "format": 1,
+  "title": { "en": "Cloudy" },
+  "description": { "en": "Cloudy's plugin for DeepSeek Harness." },
+  "plugins": [
+    {
+      "name": "dsh-plugin-cloudy",
+      "title": { "en": "Cloudy" },
+      "description": { "en": "Publish HTML pages and docs to a stable link, then read, fix, reply to and resolve the comments people leave on them." },
+      "icon": "icon.png",
+      "author": "Cloudy",
+      "homepage": "https://usecloudy.ai",
+      "repository": { "url": "https://github.com/Cloudtifact/plugins", "directory": "deepseek" },
+      "metadata": { "keywords": ["cloudy", "publish", "html", "comments", "docs", "skill"] },
+      "versions": [
+        {
+          "version": "0.3.3",
+          "publishTimestamp": 1794268800,
+          "source": { "type": "npm" },
+          "engines": { "dsh": ">=0.2.1-rc.0 <0.3.0" }
+        }
+      ]
+    }
+  ]
+}

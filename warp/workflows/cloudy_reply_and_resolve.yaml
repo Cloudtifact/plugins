@@ -1,0 +1,17 @@
+---
+name: Cloudy - Reply to a comment and resolve it (cloudy reply, cloudy resolve)
+command: "cloudy reply {{comment_id}} \"{{reply}}\" && cloudy resolve {{comment_id}}"
+tags:
+  - cloudy
+description: "Replies to a comment thread on a Cloudy page, then marks it resolved. Get the comment id from cloudy comments."
+arguments:
+  - name: comment_id
+    description: "The comment's id, from cloudy comments"
+    default_value: ~
+  - name: reply
+    description: "What you changed, or your answer"
+    default_value: ~
+source_url: "https://usecloudy.ai/docs"
+author: Cloudy
+author_url: "https://usecloudy.ai"
+shells: []

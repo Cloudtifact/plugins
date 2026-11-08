@@ -1,14 +1,14 @@
 {
-  "name": "cloudtifact",
+  "name": "cloudy",
   "interface": {
     "displayName": "Cloudy"
   },
   "plugins": [
     {
-      "name": "cloudtifact",
+      "name": "cloudy",
       "source": {
         "source": "local",
-        "path": "./plugins/cloudtifact"
+        "path": "./plugins/cloudy"
       },
       "policy": {
         "installation": "AVAILABLE",

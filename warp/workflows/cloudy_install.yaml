@@ -1,0 +1,11 @@
+---
+name: Cloudy - Install the CLI, sign in and add the agent skill (cloudy login)
+command: "npm i -g usecloudy && cloudy login && cloudy skill install"
+tags:
+  - cloudy
+description: "Installs the Cloudy CLI (needs Node.js 20 or later), signs you in through your browser, and writes the Cloudy skill into your agents' skills folders, including ~/.agents/skills, which Warp's agent reads."
+arguments: []
+source_url: "https://usecloudy.ai/docs"
+author: Cloudy
+author_url: "https://usecloudy.ai"
+shells: []

@@ -1,0 +1,10 @@
+description = "Read the open Cloudy comments, fix what they ask for, then reply and resolve"
+prompt = """
+Work through the open comments on the Cloudy space for this repo or page, following the Cloudy skill (`cloudtifact`). Extra options: {{args}}
+
+1. Run `cloudy comments --toon` (with any options above, such as `--path <file>` or `--space <id>`) and read every open thread. Without the CLI, use the Cloudy MCP tool `list_comments`.
+2. For each thread you can address: make the change, then `cloudy reply <commentId> "<what you changed>"` and `cloudy resolve <commentId>` (or `reply_to_comment` and `resolve_comment`).
+3. If a comment needs a decision from the user, or you disagree, reply with your question or reason and leave it open.
+4. Publish the changes (`cloudy push -m "<summary>"`, or publish the page again), unless hooks already push.
+5. Finish with a short list: resolved, replied and left open, and anything you need from the user.
+"""

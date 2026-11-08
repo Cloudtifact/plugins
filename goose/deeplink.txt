@@ -1,0 +1,1 @@
+goose://extension?type=streamable_http&url=https%3A%2F%2Fmcp.cloudtifact.com%2Fmcp&id=cloudy&name=Cloudy&description=Publish%20pages%20and%20docs%20to%20a%20stable%20link%2C%20then%20read%2C%20fix%2C%20reply%20to%20and%20resolve%20comments%20on%20them.&timeout=300
