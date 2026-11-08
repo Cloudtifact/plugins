@@ -1,0 +1,15 @@
+{
+  "name": "cloudy",
+  "version": "0.3.3",
+  "description": "Publish HTML pages and docs to a stable link, then read, fix, reply to and resolve the comments people leave on them. Connects to Cloudy's hosted MCP server; sign in with your Cloudy account on first use, no API key.",
+  "author": {
+    "name": "Cloudy",
+    "email": "support@usecloudy.ai",
+    "url": "https://usecloudy.ai"
+  },
+  "homepage": "https://usecloudy.ai",
+  "repository": "https://github.com/Cloudtifact/plugins",
+  "license": "MIT",
+  "keywords": ["cloudy", "usecloudy", "cloudy page", "cloudy comments", "publish with cloudy"],
+  "logo": "assets/icon.png"
+}

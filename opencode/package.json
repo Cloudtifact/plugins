@@ -1,0 +1,32 @@
+{
+  "name": "opencode-cloudy",
+  "version": "0.1.0",
+  "description": "Publish HTML pages and docs to a stable link, then read, fix, reply to and resolve the comments people leave on them.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Cloudy <support@usecloudy.ai>",
+  "homepage": "https://usecloudy.ai",
+  "bugs": { "email": "support@usecloudy.ai" },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cloudtifact/plugins.git",
+    "directory": "opencode"
+  },
+  "keywords": ["opencode", "opencode-plugin", "cloudy", "mcp", "publish", "comments"],
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "files": ["src", "skills", "commands", "README.md"],
+  "scripts": {
+    "sync": "node scripts/sync.mjs",
+    "prepack": "node scripts/sync.mjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@opencode/plugin": "^2.2.6"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.6.0"
+  }
+}

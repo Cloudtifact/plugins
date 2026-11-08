@@ -1,0 +1,29 @@
+{
+  "name": "cloudy",
+  "displayName": "Cloudy",
+  "version": "0.3.3",
+  "description": "Publish HTML pages and docs to a stable link, then read, fix, reply to and resolve the comments people leave on them.",
+  "author": {
+    "name": "Cloudy",
+    "email": "support@usecloudy.ai",
+    "url": "https://usecloudy.ai"
+  },
+  "homepage": "https://usecloudy.ai",
+  "repository": "https://github.com/Cloudtifact/plugins",
+  "license": "MIT",
+  "keywords": [
+    "cloudy",
+    "publish",
+    "share",
+    "html",
+    "artifacts",
+    "comments",
+    "feedback",
+    "review"
+  ],
+  "documentationUrl": "https://usecloudy.ai/docs",
+  "supportUrl": "https://usecloudy.ai/support",
+  "privacyPolicyUrl": "https://usecloudy.ai/privacy",
+  "termsOfServiceUrl": "https://usecloudy.ai/terms",
+  "icon": "./.claude-plugin/icon.png"
+}

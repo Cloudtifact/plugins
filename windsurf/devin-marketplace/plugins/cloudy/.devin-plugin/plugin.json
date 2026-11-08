@@ -1,0 +1,17 @@
+{
+  "name": "cloudy",
+  "displayName": "Cloudy",
+  "description": "Publish pages and docs to a stable link, then read, fix, reply to and resolve the comments people leave on them",
+  "shortDescription": "Shareable pages with comments",
+  "homepage": "https://usecloudy.ai",
+  "repository": "https://github.com/Cloudtifact/plugins",
+  "logo": "logo.png",
+  "keywords": [
+    "Productivity"
+  ],
+  "mcpServers": {
+    "cloudy": {
+      "url": "https://mcp.cloudtifact.com/mcp"
+    }
+  }
+}

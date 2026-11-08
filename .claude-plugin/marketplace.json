@@ -1,17 +1,20 @@
 {
-  "name": "cloudtifact",
-  "owner": { "name": "Cloudy", "email": "support@cloudtifact.com" },
+  "name": "cloudy",
+  "owner": {
+    "name": "Cloudy",
+    "email": "support@usecloudy.ai"
+  },
   "metadata": {
     "description": "Cloudy's plugins: publish pages your agent makes and work through the comments people leave on them."
   },
   "plugins": [
     {
-      "name": "cloudtifact",
-      "source": "./plugins/cloudtifact",
+      "name": "cloudy",
+      "source": "./plugins/cloudy",
       "description": "Publish HTML pages and docs to a stable link, then read, fix, reply to and resolve the comments people leave on them.",
-      "version": "0.3.1",
+      "version": "0.3.3",
       "category": "productivity",
-      "homepage": "https://cloudtifact.com"
+      "homepage": "https://usecloudy.ai"
     }
   ]
 }

@@ -1,0 +1,56 @@
+instructions: |
+  Cloudy publishes HTML pages, reports and docs to a stable link. A space holds a page or docs, every version of them, and the comments people leave on exact text.
+  - When the user wants a page, report, dashboard or any HTML to look at or share, publish it with publish_page and give them the link it returns. Say whether it is private (workspace only) or public.
+  - Spaces are private by default. Only pass public: true when the user asks for a link anyone can open.
+  - Before publishing something new, use find_spaces so it joins the space already about that topic.
+  - To work through feedback: list_comments, make the change, publish the new version, then reply_to_comment with what changed and resolve_comment. If a comment needs the user's decision, reply and leave it open.
+  - Format spaces and pages as markdown links: [name](link).
+# The Cloudy MCP server. Its tools become this extension's AI tools; Raycast signs in through its OAuth.
+# If the address moves (to mcp.usecloudy.ai), change it here and MCP_ORIGIN in src/lib/config.ts.
+mcp:
+  type: http
+  url: https://mcp.cloudtifact.com/mcp
+  oauth:
+    type: dynamic
+evals:
+  - input: "@cloudy what have I published?"
+    mocks:
+      list_spaces:
+        spaces:
+          - id: "a1b2c3d4e5"
+            name: "Q3 board report"
+            workspace: "acme"
+            visibility: "members"
+            kind: "repo"
+            latestVersion: 4
+            links:
+              app: "https://app.usecloudy.ai/s/a1b2c3d4e5"
+              note: "Private: only members of the workspace can open it."
+    expected:
+      - callsTool: list_spaces
+  - input: "@cloudy what are the open comments on my Q3 board report?"
+    mocks:
+      find_spaces:
+        spaces:
+          - id: "a1b2c3d4e5"
+            name: "Q3 board report"
+            workspace: "acme"
+            visibility: "members"
+            kind: "repo"
+            latestVersion: 4
+            strong: true
+            links:
+              app: "https://app.usecloudy.ai/s/a1b2c3d4e5"
+      list_comments:
+        threads:
+          - id: "c_1"
+            path: "index.html"
+            version: 4
+            author: "Dana"
+            quote: "Revenue grew 12%"
+            body: "Is this year over year or quarter over quarter?"
+            resolved: false
+            createdAt: "2026-11-02T10:00:00.000Z"
+            replies: []
+    expected:
+      - callsTool: list_comments

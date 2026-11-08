@@ -1,0 +1,14 @@
+---
+name: Cloudy - Print the open comments on a space for your agent (cloudy comments)
+command: "cloudy comments --space {{space}}"
+tags:
+  - cloudy
+description: "Prints the open comment threads on a Cloudy space as Markdown, ready to hand to your coding agent. In a repo with a .cloudtifact.json you can leave out --space."
+arguments:
+  - name: space
+    description: "The space's id or link"
+    default_value: ~
+source_url: "https://usecloudy.ai/docs"
+author: Cloudy
+author_url: "https://usecloudy.ai"
+shells: []

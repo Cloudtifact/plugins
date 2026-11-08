@@ -1,0 +1,26 @@
+{
+  "name": "pi-cloudy",
+  "version": "0.3.3",
+  "description": "Publish pages to a stable Cloudy link, then read, fix, reply to and resolve the comments people leave on them.",
+  "keywords": ["pi-package", "pi", "cloudy", "mcp", "skill", "publish", "comments"],
+  "homepage": "https://usecloudy.ai",
+  "bugs": { "email": "support@usecloudy.ai" },
+  "repository": { "type": "git", "url": "git+https://github.com/Cloudtifact/plugins.git", "directory": "pi" },
+  "license": "MIT",
+  "author": "Cloudy <support@usecloudy.ai> (https://usecloudy.ai)",
+  "type": "module",
+  "files": ["extensions", "skills", "prompts", "README.md", "CHANGELOG.md", "LICENSE"],
+  "scripts": {
+    "sync": "node scripts/sync.mjs",
+    "prepack": "node scripts/sync.mjs"
+  },
+  "pi": {
+    "extensions": ["./extensions/cloudy.ts"],
+    "skills": ["./skills"],
+    "prompts": ["./prompts/*.md"],
+    "image": "https://raw.githubusercontent.com/Cloudtifact/plugins/main/assets/icon-512.png"
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*"
+  }
+}

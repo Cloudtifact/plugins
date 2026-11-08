@@ -1,0 +1,56 @@
+{
+  "name": "dsh-plugin-cloudy",
+  "version": "0.3.3",
+  "description": "Publish HTML pages and docs to a stable link, then read, fix, reply to and resolve the comments people leave on them.",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "cloudy",
+    "skill",
+    "publish",
+    "html",
+    "comments",
+    "docs"
+  ],
+  "homepage": "https://usecloudy.ai",
+  "bugs": {
+    "url": "https://github.com/Cloudtifact/plugins/issues",
+    "email": "support@usecloudy.ai"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cloudtifact/plugins.git",
+    "directory": "deepseek"
+  },
+  "author": "Cloudy <support@usecloudy.ai> (https://usecloudy.ai)",
+  "license": "MIT",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "icon": "./icon.png",
+  "files": [
+    "index.js",
+    "cordis.patch.yml",
+    "icon.png",
+    "locale/*.json",
+    "skills/cloudtifact/SKILL.md",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "dsh": ">=0.2.1-rc.0 <0.3.0"
+  },
+  "scripts": {
+    "sync-skill": "node scripts/sync-skill.mjs"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}

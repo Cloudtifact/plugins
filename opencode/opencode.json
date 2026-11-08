@@ -1,0 +1,25 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "servers": {
+      "cloudy": {
+        "type": "remote",
+        "url": "https://mcp.cloudtifact.com/mcp"
+      }
+    }
+  },
+  "commands": {
+    "cloudy-publish": {
+      "description": "Publish an HTML page (or the page you just made) to Cloudy and share the link",
+      "template": "Publish with Cloudy, following the cloudtifact skill.\n\n- File: $ARGUMENTS. If no file is given, use the HTML page you made or edited most recently in this conversation. If there isn't one, ask which file to publish.\n- Run `cloudy publish <file>` (add `--public` only if the user asked for a link anyone can open).\n- Reply with the link(s) it prints, and say whether the page is private or public. If it joined an existing space (`Looks like \"<space>\"`), say which one."
+    },
+    "cloudy-comments": {
+      "description": "Read the open Cloudy comments, fix what they ask for, then reply and resolve",
+      "template": "Work through the open comments on the Cloudy space for this repo or page, following the cloudtifact skill.\n\n1. Run `cloudy comments --toon $ARGUMENTS` and read every open thread.\n2. For each thread you can address: make the change, then `cloudy reply <commentId> \"<what you changed>\"` and `cloudy resolve <commentId>`.\n3. If a comment needs a decision from the user, or you disagree, reply with your question or reason and leave it open.\n4. Publish the changes (`cloudy push -m \"<summary>\"`, or publish the page again), unless hooks already push.\n5. Finish with a short list: resolved, replied and left open, and anything you need from the user."
+    },
+    "cloudy-status": {
+      "description": "Show what's published on Cloudy, unpublished changes and open comments",
+      "template": "Following the cloudtifact skill:\n\n- In a repo with a `.cloudtifact.json`, run `cloudy status --toon` and `cloudy comments --toon`, and summarise unpublished changes and open threads.\n- Otherwise run `cloudy artifacts` and list what the user has published, with links."
+    }
+  }
+}

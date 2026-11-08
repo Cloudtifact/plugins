@@ -1,0 +1,14 @@
+---
+name: Cloudy - Publish an HTML page and get a link (cloudy publish)
+command: "cloudy publish {{path}}"
+tags:
+  - cloudy
+description: "Publishes an HTML page, with the files it references, or a folder with an index.html, and prints its link. The page is private unless you add --public. People comment on the exact text they mean, and every version is kept."
+arguments:
+  - name: path
+    description: "An .html file, or a folder with an index.html"
+    default_value: index.html
+source_url: "https://usecloudy.ai/docs"
+author: Cloudy
+author_url: "https://usecloudy.ai"
+shells: []

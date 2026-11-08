@@ -1,0 +1,9 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
+  "mcpServers": {
+    "cloudy": {
+      "type": "streamable-http",
+      "url": "https://mcp.cloudtifact.com/mcp"
+    }
+  }
+}

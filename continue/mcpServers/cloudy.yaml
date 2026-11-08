@@ -1,0 +1,8 @@
+# The Cloudy MCP server. The address is only in this file: change the url line if it moves.
+name: Cloudy
+version: 0.3.3
+schema: v1
+mcpServers:
+  - name: Cloudy
+    type: streamable-http
+    url: https://mcp.cloudtifact.com/mcp

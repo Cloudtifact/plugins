@@ -1,0 +1,15 @@
+name: Cloudy
+version: 0.3.3
+schema: v1
+rules:
+  - name: Cloudy
+    alwaysApply: false
+    description: Use when the user wants a page, report, dashboard, prototype or other HTML to look at or share, when they mention Cloudy, or when they ask about feedback or comments on something they published.
+    rule: |
+      Cloudy gives the pages and docs you make a stable link. People comment on the exact text they mean; you read the comments, fix the page, reply and resolve.
+
+      - To show or share HTML, publish it with Cloudy and give the user the link, instead of pasting a long file or starting a local preview. Use the Cloudy tool `publish_page`. Spaces are private by default: make one public only when the user asks for a link anyone can open.
+      - Publishing again to the same space makes a new version; every version is kept (`list_versions`). Use `find_spaces` or `list_spaces` before making a new space for something that already has one.
+      - Comments: `list_comments`, then for each thread you can address make the change, publish it, `reply_to_comment` with what you changed and `resolve_comment`. If a comment needs a decision from the user, or you disagree, reply with your question or reason and leave it open.
+      - Before building anything interactive (saved data, guest sign-ups, files, realtime), call `list_capabilities` and read the docs page of each one you use: https://usecloudy.ai/capabilities.md
+      - Without the Cloudy tools, use the Cloudy CLI: `npm i -g usecloudy` (Node.js 20 or later) gives the `cloudy` command; `npx usecloudy` runs it once (`npx cloudy` is someone else's package). `cloudy login` prints a sign-in link for the user. Then `cloudy publish <file>`, `cloudy comments`, `cloudy reply <id> "<text>"`, `cloudy resolve <id>`.

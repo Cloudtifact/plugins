@@ -1,0 +1,22 @@
+{
+  "$schema": "https://antigravity.google/schemas/v1/plugin.json",
+  "name": "cloudy",
+  "displayName": "Cloudy",
+  "version": "0.3.3",
+  "description": "Publish HTML pages and docs to a stable link, then read, fix, reply to and resolve the comments people leave on them. Every version is kept.",
+  "logo": "assets/logo.png",
+  "suggestedPrompts": [
+    "Publish this page with Cloudy and give me the link",
+    "Read the open comments on my Cloudy page and fix what they ask for",
+    "List my Cloudy spaces"
+  ],
+  "author": {
+    "name": "Cloudy",
+    "email": "support@usecloudy.ai",
+    "url": "https://usecloudy.ai"
+  },
+  "homepage": "https://usecloudy.ai/docs/mcp",
+  "repository": "https://github.com/Cloudtifact/plugins",
+  "license": "MIT",
+  "keywords": ["publish", "html", "pages", "docs", "comments", "feedback", "share", "reports"]
+}
